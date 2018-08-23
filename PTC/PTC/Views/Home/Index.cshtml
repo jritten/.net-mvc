@@ -1,3 +1,31 @@
 ﻿@{
     ViewBag.Title = "Paul's Training Company";
 }
+
+@using (Html.BeginForm())
+{
+    <!-- BEGIN HIDDEN FIELDS AREA -->
+    <!-- END HIDDEN FIELDS AREA -->
+    <!-- BEGIN SEARCH AREA -->
+    <div class="panel panel-primary">
+        <div class="panel-heading">
+            <h1 class="panel-title">Search For Products</h1>
+        </div>
+        <div class="panel-body">
+            <div class="form-group">
+                @Html.Label("Product Name")
+                @Html.TextBox("SearchProductName")
+            </div>
+        </div>
+        <div class="panel-footer"></div>
+    </div>
+    <!-- END SEARCH AREA -->
+    <!-- BEGIN LIST AREA -->
+    <!-- END LIST AREA -->
+}
+
+@section scripts 
+{
+    <script>
+    </script>
+}
