@@ -8,6 +8,12 @@ namespace PTCData
 {
     public class TrainingProductManager
     {
+        public List<TrainingProduct> Get()
+        {
+            List<TrainingProduct> ret = new List<TrainingProduct>();
+            ret = CreateMockData();
+            return ret;
+        }
         private List<TrainingProduct> CreateMockData()
         {
             List<TrainingProduct> ret = new List<TrainingProduct>();
@@ -23,7 +29,7 @@ namespace PTCData
             ret.Add(new TrainingProduct()
             {
                 ProductId = 2,
-                ProductName = The Wonders of Ruby on Rails",
+                ProductName = "The Wonders of Ruby on Rails",
                 IntroductionDate = Convert.ToDateTime("6/02/14"),
                 Url = "http://bitly/lSNzc0i",
                 Price = Convert.ToDecimal(19.00)
