@@ -14,13 +14,28 @@
         <div class="panel-body">
             <div class="form-group">
                 @Html.Label("Product Name")
-                @Html.TextBox("SearchProductName")
+                @Html.TextBox("SearchProductName", "", new { @class = "form-control" })
             </div>
         </div>
-        <div class="panel-footer"></div>
+        <div class="panel-footer">
+            <button id="btnSearch"class="btn btn-sm btn-primary">Search</button>
+            <button id="btnReset" class="btn btn-sm btn-primary">Reset</button>
+        </div>
     </div>
     <!-- END SEARCH AREA -->
     <!-- BEGIN LIST AREA -->
+    <div class="table-responsive">
+        <table class="table table-condensed table-bordered table-striped table-hover">
+            <thead>
+                <tr>
+                    <th>Product Name</th>
+                    <th>Introduction Date</th>
+                    <th>Url</th>
+                    <th>Price</th>
+                </tr>
+            </thead>
+        </table>
+    </div>
     <!-- END LIST AREA -->
 }
 
