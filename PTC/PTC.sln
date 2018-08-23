@@ -5,6 +5,8 @@ VisualStudioVersion = 15.0.27703.2042
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PTC", "PTC\PTC.csproj", "{36043CFF-7C12-4E9F-AD49-DC6732C4466C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PTCData", "PTCData\PTCData.csproj", "{C9C8877D-4DAE-45DF-B653-FAEBD8EF761A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{36043CFF-7C12-4E9F-AD49-DC6732C4466C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{36043CFF-7C12-4E9F-AD49-DC6732C4466C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{36043CFF-7C12-4E9F-AD49-DC6732C4466C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C9C8877D-4DAE-45DF-B653-FAEBD8EF761A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C9C8877D-4DAE-45DF-B653-FAEBD8EF761A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C9C8877D-4DAE-45DF-B653-FAEBD8EF761A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C9C8877D-4DAE-45DF-B653-FAEBD8EF761A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
