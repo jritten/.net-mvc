@@ -40,6 +40,11 @@ namespace PTCData
                     break;
 
                 case "save":
+                    Save();
+                    if (IsValid)
+                    {
+                        Get();
+                    }
                     break;
 
                 case "cancel":
@@ -57,6 +62,23 @@ namespace PTCData
 
                 default:
                     break;
+            }
+        }
+        private void Save()
+        {
+            if (IsValid)
+            {
+                if (Mode == "Add")
+                {
+
+                }
+            }
+            else
+            {
+                if (Mode == "Add")
+                {
+                    AddMode();
+                }
             }
         }
         private void ListMode()
