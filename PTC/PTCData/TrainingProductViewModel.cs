@@ -41,7 +41,7 @@ namespace PTCData
         private void Get()
         {
             TrainingProductManager mgr = new TrainingProductManager();
-            Products = mgr.Get();
+            Products = mgr.Get(SearchEntity);
         }
     }
 }
