@@ -10,13 +10,10 @@ namespace PTCData
     {
         public TrainingProductViewModel()
         {
-            IsListAreaVisible = true;
-            IsSearchAreaVisible = true;
-            IsDetailAreaVisible = false;
+            Init();
 
             Products = new List<TrainingProduct>();
             SearchEntity = new TrainingProduct();
-            EventCommand = "List";
         }
         public string EventCommand { get; set; }
         public List<TrainingProduct> Products { get; set; }
@@ -24,6 +21,11 @@ namespace PTCData
         public bool IsDetailAreaVisible { get; set; }
         public bool IsListAreaVisible { get; set; }
         public bool IsSearchAreaVisible { get; set; }
+        private void Init()
+        {
+            EventCommand = "List";
+            ListMode();
+        }
         public void HandleRequest()
         {
             switch(EventCommand.ToLower())
@@ -33,19 +35,37 @@ namespace PTCData
                     Get();
                     break;
 
+                case "save":
+                    break;
+
+                case "cancel":
+                    ListMode();
+                    Get();
+                    break;
+
                 case "resetsearch":
                     ResetSearch();
                     break;
 
                 case "add":
-                    IsListAreaVisible = false;
-                    IsSearchAreaVisible = false;
-                    IsDetailAreaVisible = true;
+                    AddMode();
                     break;
 
                 default:
                     break;
             }
+        }
+        private void ListMode()
+        {
+            IsListAreaVisible = true;
+            IsSearchAreaVisible = true;
+            IsDetailAreaVisible = false;
+        }
+        private void AddMode()
+        {
+            IsListAreaVisible = false;
+            IsSearchAreaVisible = false;
+            IsDetailAreaVisible = true;
         }
         private void ResetSearch()
         {
