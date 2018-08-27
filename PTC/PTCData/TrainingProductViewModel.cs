@@ -14,10 +14,14 @@ namespace PTCData
 
             Products = new List<TrainingProduct>();
             SearchEntity = new TrainingProduct();
+            Entity = new TrainingProduct();
         }
+        public TrainingProduct Entity { get; set; }
         public string EventCommand { get; set; }
         public List<TrainingProduct> Products { get; set; }
         public TrainingProduct SearchEntity { get; set; }
+        public bool IsValid { get; set; }
+        public string Mode { get; set; }
         public bool IsDetailAreaVisible { get; set; }
         public bool IsListAreaVisible { get; set; }
         public bool IsSearchAreaVisible { get; set; }
@@ -36,6 +40,11 @@ namespace PTCData
                     break;
 
                 case "save":
+                    Save();
+                    if (IsValid)
+                    {
+                        Get();
+                    }
                     break;
 
                 case "cancel":
@@ -48,24 +57,53 @@ namespace PTCData
                     break;
 
                 case "add":
-                    AddMode();
+                    Add();
                     break;
 
                 default:
                     break;
             }
         }
+        private void Save()
+        {
+            if (IsValid)
+            {
+                if (Mode == "Add")
+                {
+
+                }
+            }
+            else
+            {
+                if (Mode == "Add")
+                {
+                    AddMode();
+                }
+            }
+        }
         private void ListMode()
         {
+            IsValid = true;
             IsListAreaVisible = true;
             IsSearchAreaVisible = true;
             IsDetailAreaVisible = false;
+            Mode = "List";
+        }
+        private void Add()
+        {
+            IsValid = true;
+            Entity = new TrainingProduct();
+            Entity.IntroductionDate = DateTime.Now;
+            Entity.Url = "http://";
+            Entity.Price = 0;
+            AddMode();
         }
         private void AddMode()
         {
             IsListAreaVisible = false;
             IsSearchAreaVisible = false;
             IsDetailAreaVisible = true;
+            Mode = "Add";
         }
         private void ResetSearch()
         {
