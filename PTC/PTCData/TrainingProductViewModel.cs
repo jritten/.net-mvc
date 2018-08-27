@@ -11,9 +11,23 @@ namespace PTCData
         public TrainingProductViewModel()
         {
             Products = new List<TrainingProduct>();
+            EventCommand = "List";
         }
+        public string EventCommand { get; set; }
         public List<TrainingProduct> Products { get; set; }
-        public void Get()
+        public void HandleRequest()
+        {
+            switch(EventCommand.ToLower())
+            {
+                case "list":
+                    Get();
+                    break;
+
+                default:
+                    break;
+            }
+        }
+        private void Get()
         {
             TrainingProductManager mgr = new TrainingProductManager();
             Products = mgr.Get();
