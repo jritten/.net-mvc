@@ -16,18 +16,13 @@ namespace PTC.Controllers
             return View(vm);
         }
 
-        public ActionResult About()
+        [HttpPost]
+        public ActionResult Index(TrainingProductViewModel vm)
         {
-            ViewBag.Message = "Your application description page.";
-
-            return View();
+            vm.HandleRequest();
+            ModelState.Clear();
+            return View(vm);
         }
 
-        public ActionResult Contact()
-        {
-            ViewBag.Message = "Your contact page.";
-
-            return View();
-        }
     }
 }
