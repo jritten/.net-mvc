@@ -6,6 +6,7 @@
 @using (Html.BeginForm())
 {
     <!-- BEGIN HIDDEN FIELDS AREA -->
+    @Html.HiddenFor(m => m.EventCommand)
     <!-- END HIDDEN FIELDS AREA -->
     <!-- BEGIN SEARCH AREA -->
     <div class="panel panel-primary">
@@ -14,10 +15,9 @@
         </div>
         <div class="panel-body">
             <div class="form-group">
-                @Html.Label("Product Name")
-                @Html.TextBox("SearchProductName", "", new { @class = "form-control" })
+                @Html.LabelFor(m => m.SearchEntity.ProductName, "Product Name")
+                @Html.TextBoxFor(m => m.SearchEntity.ProductName, new { @class = "form-control" })
             </div>
-        </div>
         <div class="panel-footer">
             <button id="btnSearch"class="btn btn-sm btn-primary">Search</button>
             <button id="btnReset" class="btn btn-sm btn-primary">Reset</button>
