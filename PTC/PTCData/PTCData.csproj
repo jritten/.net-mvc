@@ -43,6 +43,7 @@
     <Compile Include="TrainingProductManager.cs" />
     <Compile Include="TrainingProduct.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TrainingProductViewModel.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
